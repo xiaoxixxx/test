@@ -1,0 +1,151 @@
+{
+	"easycom": {
+		"custom": {
+			"^(?!z-paging-refresh|z-paging-load-more)z-paging(.*)": "z-paging/components/z-paging$1/z-paging$1.vue",
+			"Loading": "@/components/loading/loading.vue"
+
+		}
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/tabbar/index"
+		}, {
+			"path": "pages/tabbar/recharge"
+		}, {
+			"path": "pages/tabbar/task"
+		}, {
+			"path": "pages/tabbar/record"
+		}, {
+			"path": "pages/tabbar/my"
+		}, {
+			"path": "pages/login/login"
+		}, {
+			"path": "pages/record/withdrawRecord"
+		}, {
+			"path": "pages/record/rechargeRecord"
+		}, {
+			"path": "pages/login/register"
+		}, {
+			"path": "pages/login/resetPwd"
+		}, {
+			"path": "pages/setting/setUp"
+		}, {
+			"path": "pages/setting/set1"
+		}, {
+			"path": "pages/setting/set2"
+		}, {
+			"path": "pages/setting/set3"
+		}, {
+			"path": "pages/setting/set4"
+		}, {
+			"path": "pages/setting/set5"
+		}, {
+			"path": "pages/mine/withdraw"
+		}, {
+			"path": "pages/mine/share"
+		}, {
+			"path": "pages/mine/notice"
+		}, {
+			"path": "pages/recharge/bankRecharge"
+
+		}, {
+			"path": "pages/recharge/usdtRecharge"
+		}, {
+			"path": "pages/recharge/usdtOrder"
+		}, {
+			"path": "pages/recharge/usdtTxid"
+		}, {
+			"path": "pages/mine/usdtWithdraw"
+		}, {
+			"path": "pages/mine/bankWithdraw"
+		}, {
+			"path": "pages/mine/team"
+		}, {
+			"path": "pages/mine/skyPay"
+		}, {
+			"path": "pages/record/skyPayRecord"
+		}, {
+			"path": "pages/mine/accountDetails"
+		}, {
+			"path": "pages/mine/article"
+		}, {
+			"path": "pages/mine/service"
+		}, {
+			"path": "pages/mine/langSetting"
+		},
+		{
+			"path": "pages/mine/sign"
+		}, {
+			"path": "pages/record/signRecord"
+		}, {
+			"path": "pages/mine/rollingDraw"
+		}, {
+			"path": "pages/record/drawRecord"
+		}, {
+			"path": "pages/mine/redEnvelope"
+		}, {
+			"path": "pages/record/redRecord"
+		}, {
+			"path": "pages/mine/redEnvList"
+		}, {
+			"path": "pages/mine/eggAct"
+		},
+		{
+		    "path" : "pages/record/eggRecord"
+		}
+	],
+
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "custom",
+		"style": {
+			"app-plus": {
+				"animationType": "fade-in",
+				"animationDuration": 300
+			}
+		}
+	},
+	"tabBar": {
+		"backgroundColor": "#fff",
+		"selectedColor": "#F5B04C",
+		"height": "60px",
+		"list": [{
+				"pagePath": "pages/tabbar/index",
+				"iconPath": "/static/themeNum1/tabbar/home.png",
+				"selectedIconPath": "/static/themeNum1/tabbar/home1.png",
+				"text": "Home"
+			},
+			{
+				"pagePath": "pages/tabbar/recharge",
+				"iconPath": "/static/themeNum1/tabbar/recharge.png",
+				"selectedIconPath": "/static/themeNum1/tabbar/recharge1.png",
+				"text": "Recharge"
+			},
+
+			{
+				"pagePath": "pages/tabbar/task",
+				"iconPath": "/static/themeNum1/tabbar/task.png",
+				"selectedIconPath": "/static/themeNum1/tabbar/task1.png",
+				"text": "Task"
+			},
+
+			{
+				"pagePath": "pages/tabbar/record",
+				"iconPath": "/static/themeNum1/tabbar/record.png",
+				"selectedIconPath": "/static/themeNum1/tabbar/record1.png",
+				"text": "Record"
+			},
+			{
+				"pagePath": "pages/tabbar/my",
+				"iconPath": "/static/themeNum1/tabbar/my.png",
+				"selectedIconPath": "/static/themeNum1/tabbar/my1.png",
+				"text": "My"
+
+			}
+		]
+	}
+}

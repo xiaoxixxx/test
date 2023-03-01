@@ -1,0 +1,156 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+ul,
+ol li {
+	list-style: none;
+}
+
+@for $i from 1 to 100 {
+	.mgtb#{$i} {
+		margin-top: #{$i}rpx;
+		margin-bottom: #{$i}rpx;
+	}
+	.mglr#{$i} {
+		margin-left: #{$i}rpx;
+		margin-right: #{$i}rpx;
+	}
+
+	.pdtb#{$i} {
+		padding-top: #{$i}rpx;
+		padding-bottom: #{$i}rpx;
+	}
+
+	.pdlr#{$i} {
+		padding-left: #{$i}rpx;
+		padding-right: #{$i}rpx;
+	}
+
+	.mt#{$i} {
+		margin-top: #{$i}rpx;
+	}
+
+	.pt#{$i} {
+		padding-top: #{$i}rpx;
+	}
+
+	.ml#{$i} {
+		margin-left: #{$i}rpx;
+	}
+
+	.pl#{$i} {
+		padding-left: #{$i}rpx;
+	}
+
+	.mb#{$i} {
+		margin-bottom: #{$i}rpx;
+	}
+
+	.pb#{$i} {
+		padding-bottom: #{$i}rpx;
+	}
+
+	.mr#{$i} {
+		margin-right: #{$i}rpx;
+	}
+
+	.pr#{$i} {
+		padding-right: #{$i}rpx;
+	}
+
+	.ww#{$i} {
+		width: #{$i}#{'%'};
+	}
+
+	.hh#{$i} {
+		height: #{$i}#{'%'};
+	}
+
+	.bbo#{$i} {
+		border-radius: #{$i}rpx;
+	}
+
+	.f#{$i} {
+		font-size: #{$i}rpx;
+	}
+}
+
+.text_bold {
+	font-weight: bold;
+}
+
+.text_center {
+	text-align: center;
+	line-height: 100%;
+}
+
+// 布局
+.flex {
+	display: flex;
+}
+
+.flex-col {
+	flex-direction: column;
+}
+
+//
+.row_center {
+	justify-content: center;
+}
+
+.col_center {
+	align-items: center;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.around {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.flex_col {
+	flex-direction: column;
+}
+// 单行隐藏
+.textHiddenOne {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.textHidden {
+	// 多行隐藏
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	overflow: hidden;
+}
+.borderB {
+	border-bottom: 1rpx solid;
+}
+.borderT {
+	border-top: 1rpx solid;
+}
+.borderL {
+	border-left: 1rpx solid;
+}
+.borderR {
+	border-right: 1rpx solid;
+}

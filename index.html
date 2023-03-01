@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+	
+	<title>Amazonshopin</title>
+	<link rel="icon" href="./static/titleIcon/ams.png">
+	<meta name="application-name" content="Amazonshopin">
+	<meta name="apple-mobile-web-app-title" content="Amazonshopin">
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="./static/titleIcon/ams.png">
+	<meta name="apple-mobile-web-app-capable" content="yes"> 
+	
+	
+    <script>
+      var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') ||
+        CSS.supports('top: constant(a)'))
+      document.write(
+        '<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' +
+        (coverSupport ? ', viewport-fit=cover' : '') + '" />')
+    </script>
+	
+    <!--preload-links-->
+    <!--app-context-->
+  </head>
+  <body>
+    <div id="app"><!--app-html--></div>
+    <script type="module" src="/src/main.js"></script>
+	<script type="module" src="/src/name.js"></script>
+  </body>
+  
+  <style>
+	
+  </style>
+</html>
