@@ -310,7 +310,13 @@
 		}
 	}
 	// 终于可以用了
-	onLoad(() => {
+	onLoad((e) => {
+		if(e.key){
+			uni.navigateTo({
+				url:'../linkEgg/linkEgg?key='+e.key
+			})
+			return false
+		}
 		if (!uni.getStorageSync('setLang')) {
 			request({
 				url: 'setting/lang',

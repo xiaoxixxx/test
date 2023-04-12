@@ -23,9 +23,7 @@
 </script>
 
 <style lang="scss">
-	
-
-	/*每个页面公共css */
+		/*每个页面公共css */
 	.nut-navbar {
 		padding: 0 !important;
 	}
@@ -99,4 +97,5 @@
 	.uni-swiper-dot-active {
 		background-color: rgb(245, 176, 76) !important;
 	}
+	
 </style>

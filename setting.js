@@ -27,11 +27,17 @@ const countryList = [
 		qianzhui:'api.',
 		lang:"en",
 		title:"amazonshopin",
-		icon:"./src/titleIcon/ams.png"
-		
+		icon:"./src/static/titleIcon/ams.png"
 	},
 	
-
+	{
+		url:'eBaybuys.com',
+		themeNum:1,
+		qianzhui:'api.',
+		lang:"en",
+		title:"amazonshopin",
+		icon:"./src/static/titleIcon/ams.png"
+	},
 ] 
 let COUNTRY= {}
 countryList.forEach(item=>{

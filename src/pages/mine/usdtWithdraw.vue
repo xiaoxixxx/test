@@ -166,7 +166,6 @@
 	const currency = ref("")
 	const inputNum = ref("")
 	const topNotice = ref("")
-	const locked = ref(false)
 
 	const submitHandle = () => {
 		if (pageData.value.check.status == 1) {

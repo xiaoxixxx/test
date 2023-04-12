@@ -139,7 +139,6 @@
 
 	const store = userStore();
 
-	const actInd = ref(0); //0 登录  1 注册  2 找回密码
 
 	const openPwd = ref(true) // 密码可见
 	const openCpwd = ref(true) // 第二次密码可见
@@ -330,6 +329,16 @@
 			}).then(res => {
 				showLoading.value.loading = false
 				Toast.text(t('login.l_r12'))
+				
+				if(sessionStorage.getItem('link')){
+					let key = sessionStorage.getItem('link')
+					uni.clearStorage()
+					uni.setStorageSync('token', res.accessToken)
+					uni.navigateTo({
+						url:'../linkEgg/linkEgg?key='+key
+					})
+					return false
+				}
 				uni.setStorageSync('token', res.accessToken)
 				setTimeout(() => {
 					uni.switchTab({

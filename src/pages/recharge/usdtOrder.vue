@@ -107,9 +107,16 @@
 	} = useI18n();
 	const methods = {
 		back() {
-			uni.switchTab({
-				url: "../tabbar/recharge"
-			})
+			if(!uploadTxid.value){
+				uni.switchTab({
+					url: "../tabbar/index"
+				})
+			}else{
+				uni.navigateTo({
+					url: "./usdtTxid"
+				})
+			}
+			
 		},
 	};
 
@@ -160,7 +167,7 @@
 			}
 			addresData.value = res.address
 			pageData.value = res.order
-
+			res.type == 1?uploadTxid.value = false:uploadTxid.value = true
 			rate.value = res.rate
 			if (timer.value) {
 				clearInterval(timer.value)
@@ -183,6 +190,8 @@
 		}
 	}
 	const cancleHandlemMask = ref(false)
+	const uploadTxid = ref(null)
+	
 	const cancleOrder = () => {
 		cancleHandlemMask.value = true
 	}

@@ -177,13 +177,12 @@
 	const timer = ref(null)
 	const forgetHandle = () => {
 		showLoading.value.loading = true
-		console.log(regisForm.value);
 		request({
 			url: 'join/forget',
 			methods: 'post',
 			data: regisForm.value
 		}).then(res => {
-			Toast.text('设置成功')
+			Toast.text('success')
 			showLoading.value.loading = true
 			setTimeout(() => {
 				uni.navigateTo({

@@ -9,18 +9,18 @@
 			</view>
 			<view class="f50 mt60 text_bold" :style="{color:store.$state.secondColor}">	{{t('all.a_c3')}}</view>
 
-			<view class="mt80">
-				<view class="kefuItem flex col_center" v-for="(item,index) in langList" @click="langInd = index"
+			<view class="mt80 pb50">
+				<view class="kefuItem flex col_center" v-for="(item,index) in langList" @click="setHandle(index)"
 					:style="langInd == index?choStyle:''">
 					<image :src="`/static/lang/${item.lang}.png`" mode="widthFix" style="width: 60rpx;height: 60rpx;"></image>
 					<view class="mglr40 f40">
 						{{item.name}}
 					</view>
 				</view>
-
-				<view class="btns f40" :style="{background:store.$state.contentColor}" @click="setHandle">
+				
+			<!-- 	<view class="btns f40" :style="{background:store.$state.contentColor}" >
 					{{t('all.a_c1')}}
-				</view>
+				</view> -->
 			</view>
 		</view>
 	</view>
@@ -73,9 +73,10 @@
 			})
 		})
 	}
-	const setHandle = () => {
-		uni.setStorageSync('lang', langList.value[langInd.value].lang)
+	const setHandle = (index) => {
+		uni.setStorageSync('lang', langList.value[index].lang)
 		history.go(0)
+		
 		// window.open(item.contact_link)
 	}
 	// 终于可以用了

@@ -13,7 +13,8 @@ export const userStore = defineStore({
 			my: {},
 			wr: {},
 			task: {},
-			countryCode: []
+			countryCode: [],
+			linImg:""
 		}
 	},
 	actions: {
@@ -42,6 +43,9 @@ export const userStore = defineStore({
 		},
 		setTask(data) {
 			this.task = data
+		},
+		setImg(data){
+			this.linImg = data
 		}
 	},
 	// 持久化存储

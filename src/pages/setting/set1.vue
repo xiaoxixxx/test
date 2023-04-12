@@ -230,13 +230,20 @@
 				}
 			}
 		})
+		
+		// request({
+		// 	url: '/user/index',
+		// 	methods: 'get',
+		// }).then(res => {
+		// 	if(res.country_code == '+91'){
+		// 		showIn.value = true
+		// 	}
+		// })
 	}
 	// 终于可以用了
 	onShow(() => {
 		getData();
-		if(WEB_URL == 'bsppy88.top'  || WEB_URL == 'amazonshopin.com'){
-			showIn.value = true
-		}
+		
 	})
 </script>
 

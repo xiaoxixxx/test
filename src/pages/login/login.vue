@@ -227,8 +227,19 @@
 				methods: 'post',
 				data: loginForm.value
 			}).then(res => {
+				
 				showLoading.value.loading = false
 				Toast.text(t('login.l_l11'))
+				
+				if(sessionStorage.getItem('link')){
+					let key = sessionStorage.getItem('link')
+					uni.clearStorage()
+					uni.setStorageSync('token', res.accessToken)
+					uni.navigateTo({
+						url:'../linkEgg/linkEgg?key='+key
+					})
+					return false
+				}
 				uni.setStorageSync('token', res.accessToken)
 				setTimeout(() => {
 					uni.switchTab({

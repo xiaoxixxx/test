@@ -50,7 +50,6 @@
 		onLoad
 	} from "@dcloudio/uni-app";
 	const store = userStore();
-	const showLoading = ref(null)
 	import {
 		useI18n
 	} from 'vue-i18n'
@@ -58,6 +57,7 @@
 	const {
 		t
 	} = useI18n()
+	const showLoading = ref(null)
 	const methods = {
 		back() {
 			history.back()

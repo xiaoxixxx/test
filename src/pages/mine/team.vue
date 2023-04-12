@@ -57,7 +57,7 @@
 				<view class="botItem" v-for="item in botList">
 					<view class="between">
 						<view>{{t('mine.m_t2')}}</view>
-						<view>{{item.phone}}</view>
+						<view>{{item.filter_phone}}</view>
 					</view>
 					<view class="between mt16">
 						<view>{{t('mine.m_t3')}}</view>
