@@ -18,7 +18,7 @@
 				:loading-more-no-more-text="t('record.r_r1')" :empty-view-reload-text="t('record.r_r2')"
 				:loading-more-loading-text="t('record.r_r4')" :loading-more-fail-text="t('record.r_r3')"
 				style="margin: 250rpx auto 0;width: 100%; " :loading-more-default-text="t('record.r_r3')">
-				<view class="mt30 recordItem f24" v-for="(item,index) in recordList" >
+				<view class="mt30 recordItem f24" v-for="(item,index) in recordList">
 					<view class="colorF">
 						{{t('record.r_r5')}} :{{item.create_time_format}}
 					</view>
@@ -27,11 +27,13 @@
 					</view>
 					<view class="flex mt24 ">
 						<view class="imgBg center">
-							<image :src="item.goods.pic" mode="scaleToFill" style="width: 100%;height: 100%;border-radius: 20rpx; border: 2rpx solid #AFAFAF;"  ></image>
+							<image :src="item.goods.pic" mode="scaleToFill"
+								style="width: 100%;height: 100%;border-radius: 20rpx; border: 2rpx solid #AFAFAF;">
+							</image>
 						</view>
 
 						<view class="mglr27 flex flex-col " style="align-content: space-around; width: 65%;">
-							<view class="textHidden" >{{item.goods.name}}  </view>
+							<view class="textHidden">{{item.goods.name}} </view>
 							<view class="between" style="margin-top: 30rpx;">
 								<view> {{item.order_price}} {{currency}}</view>
 								<view>×1</view>
@@ -56,7 +58,7 @@
 						</view>
 					</view>
 					<!-- -->
-					<view class="btns mt34" :style="{background:store.$state.contentColor}"  v-if="item.status ==1" 
+					<view class="btns mt34" :style="{background:store.$state.contentColor}" v-if="item.status ==1"
 						@click="getOrderInfo(item.order_no)">
 						submit orders
 					</view>
@@ -83,12 +85,13 @@
 						</view>
 						<view class="flex mt24 ">
 							<view class="imgBg center">
-								<image :src="maskData.goods.pic"  mode="scaleToFill" style="width: 100%;height: 100%;border-radius: 20rpx; border: 2rpx solid #AFAFAF;" >
+								<image :src="maskData.goods.pic" mode="scaleToFill"
+									style="width: 100%;height: 100%;border-radius: 20rpx; border: 2rpx solid #AFAFAF;">
 								</image>
 							</view>
 
 							<view class="mglr27 flex flex-col " style="align-content: space-around; width: 65%;">
-								<view class="textHidden" >{{maskData.goods.name}} </view>
+								<view class="textHidden">{{maskData.goods.name}} </view>
 								<view class="between" style="margin-top: 50rpx;">
 									<view> {{maskData.order_price}} {{currency}}</view>
 									<view>×1</view>
@@ -122,7 +125,8 @@
 						</view>
 						<!-- v-if="maskData.status == 2" -->
 						<view class=" mt30 maskBtns f30" :style="{background:store.$state.contentColor}"
-							v-if=" maskData.need_recharge > 0  && maskData.status  ==1" @click="changePage('./recharge')">
+							v-if=" maskData.need_recharge > 0  && maskData.status  ==1"
+							@click="changePage('./recharge')">
 							{{t('tabbar.t_t4')}}
 						</view>
 						<!-- v-if="maskData.status == 2" -->
@@ -203,14 +207,14 @@
 	const showLoading = ref(null)
 	const paging = ref(null)
 	const hasMore = ref(true)
-	
-	
+
+
 	const getData = page => {
 		pages.value.page = page
-		if(page == 1){
-			try{
+		if (page == 1) {
+			try {
 				paging.value.clean()
-			}catch(e){
+			} catch (e) {
 				//TODO handle the exception
 			}
 		}
@@ -239,6 +243,7 @@
 		const data = {
 			order_no: item.order_no
 		}
+	
 		request({
 			url: 'task/finishOrder',
 			methods: 'post',
@@ -248,7 +253,8 @@
 			Toast.text(t('record.r_r11'))
 			pages.value.page = 1
 			pages.value.status = 0
-			getData(pages.value, 'col')
+			paging.value.clean()
+			getData()
 		}).catch(err => {
 			showLoading.value.loading = false
 			Toast.text(err.message)
@@ -290,8 +296,7 @@
 	// 终于可以用了
 	onShow(() => {
 		currency.value = uni.getStorageSync('currency')
-		
-			getData(1)
+		getData(1)
 	})
 </script>
 

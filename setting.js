@@ -7,10 +7,10 @@ const store = userStore();
 
 const countryList = [
 	{
-		url:'bsppy88.top',
-		themeNum:1,
-		qianzhui:'api.',
-		lang:"ar"
+		url: 'task777.com',
+		themeNum: 1,
+		qianzhui: 'grabadmin.',
+		lang: "en",
 	},
 	
 	{

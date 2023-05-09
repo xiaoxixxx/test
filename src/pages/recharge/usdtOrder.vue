@@ -204,7 +204,9 @@
 			}
 		}).then(res => {
 			Toast.text(t('wr.r_r13'))
-			methods.back()
+			uni.switchTab({
+				url:'../tabbar/recharge'
+			})
 		}).catch(err => {
 			Toast.text(err.message)
 		})

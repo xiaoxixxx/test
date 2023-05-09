@@ -86,6 +86,11 @@
 				</view>
 			</view>
 		</view>
+		 <nut-overlay v-model:visible="showMask">
+		    <div class="wrapper">
+		      <div class="content" v-html="maskData"></div>
+		    </div>
+		  </nut-overlay>
 		<Loading ref="showLoading"></Loading>
 	</view>
 </template>
@@ -103,7 +108,10 @@
 		onLoad
 	} from "@dcloudio/uni-app";
 	const store = userStore();
-
+	
+	
+	const showMask = ref(false)
+	const maskData = ref("")
 	const showLoading = ref(null)
 	import {
 		useI18n
@@ -146,6 +154,10 @@
 			pageData.value = res
 			if (res.user.payment_password) {
 				showInp.value = false
+			}
+			if(res.pop){
+				maskData.value = res.pop
+				showMask.value =true
 			}
 			// console.log(res);
 			let str = t('wr.w_u6')
@@ -213,6 +225,21 @@
 </script>
 
 <style lang="scss">
+	.wrapper {
+	  display: flex;
+	  height: 100%;
+	  align-items: center;
+	  justify-content: center;
+	  .content {
+	    display: flex;
+	    width: 600rpx;
+	    height: 350rpx;
+	    background: #fff;
+	    border-radius: 8px;
+		padding: 30rpx ;
+		overflow: scroll;
+	  }
+	}
 	.topBox {
 		width: 100%;
 		height: 328rpx
